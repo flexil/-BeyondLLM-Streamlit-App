@@ -1,5 +1,5 @@
-!pip install beyondllm
-!pip install llama-index-readers-web
-!pip install beyondllm  llama_index.embeddings.huggingface
-!pip install llama-index-embeddings-huggingface
-!pip install streamlit
+beyondllm
+llama-index-readers-web
+llama_index.embeddings.huggingface
+llama-index-embeddings-huggingface
+install streamlit
