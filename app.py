@@ -19,7 +19,7 @@ def get_user_input():
 
 def create_retriever(data, embed_model, search_type):
     if search_type == "Semantic":
-        return auto_retriever(data=data, embed_model=embed_model, type="cross-rerank", top_k=5)
+        return auto_retriever(data=data, embed_model=embed_model, type="cross-rerank", top_k=2)
     elif search_type == "Hybrid":
         return auto_retriever(data=data, embed_model=embed_model, type="hybrid", top_k=5, mode="OR")
     else:
@@ -48,7 +48,7 @@ def main():
         data = fit(path=url, dtype="url")
         embed_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         retriever = create_retriever(data, embed_model, search_type)
-        llm = HuggingFaceHubModel(model="huggingfaceh4/zephyr-7b-alpha", token=hf_token, model_kwargs={"max_new_tokens": 512, "temperature": 0.1})
+        llm = HuggingFaceHubModel(model="huggingfaceh4/zephyr-7b-alpha", token=hf_token, model_kwargs={"max_new_tokens":256, "temperature": 0.0})
         
         prompt = f"""
         You are a knowledgeable AI assistant.
