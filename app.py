@@ -19,7 +19,7 @@ def get_user_input():
 
 def create_retriever(data, embed_model, search_type):
     if search_type == "Semantic":
-        return auto_retriever(data=data, embed_model=embed_model, type="semantic", top_k=5)
+        return auto_retriever(data=data, embed_model=embed_model, type="cross-rerank", top_k=5)
     elif search_type == "Hybrid":
         return auto_retriever(data=data, embed_model=embed_model, type="hybrid", top_k=5, mode="OR")
     else:
