@@ -40,6 +40,8 @@ def clean_output(output):
     return clean_output
 
 def main():
+    st.title("BeyondLLM App: Semantic Search, Hybrid Search, and Summarization for AI  Blog Posts Content")
+    st.subtitle("Perform semantic, hybrid search and summarization to find relevant information within a blog post")
     url, question, search_type = get_user_input()
     
     if st.button("Submit"):
