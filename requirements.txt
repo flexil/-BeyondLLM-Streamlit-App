@@ -1,5 +1,5 @@
 beyondllm
 llama-index-readers-web
 llama_index.embeddings.huggingface
-llama-index-embeddings-huggingface
-install streamlit
+streamlit
+llama_index.vector_stores.chroma
