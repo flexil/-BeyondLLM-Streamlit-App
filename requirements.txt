@@ -1,6 +1,8 @@
+python==3.10.0
 beyondllm
 llama-index-readers-web
 llama_index.embeddings.huggingface
 streamlit
 llama_index.vector_stores.chroma
 nltk
+
