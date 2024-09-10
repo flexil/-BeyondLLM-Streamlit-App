@@ -29,7 +29,7 @@ def generate_output(retriever, llm, prompt):
     output = pipeline.call()
     return output
     
-def summarize(llm, url):
+def summarize(llm, embed_model,url):
     data = fit(path=url, dtype="url")
     retriever = auto_retriever(data=data, embed_model=embed_model,type="summarization", max_length=200)
     summary = retriever.call()
@@ -62,7 +62,7 @@ def main():
         if retriever:
             output = generate_output(retriever, llm, prompt)
         else:
-            output = summarize(llm, url)
+            output = summarize(llm,retriever, url)
         
         st.write(f"RESPONSE: {clean_output(output)}")
 
