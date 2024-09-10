@@ -6,7 +6,8 @@ from beyondllm.retrieve import auto_retriever
 from beyondllm.source import fit
 import os
 import re
-
+import nltk
+nltk.download('punkt')
 
 hf_token = os.environ['HF_TOKEN']
 st.title("BeyondLLM App: Semantic Search, Hybrid Search, and Summarization for AI  Blog Posts Content")
