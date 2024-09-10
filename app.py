@@ -31,7 +31,7 @@ def generate_output(retriever, llm, prompt):
     
 def summarize(llm, embed_model,url):
     data = fit(path=url, dtype="url")
-    retriever = auto_retriever(data=data, embed_model=embed_model,type="summarization", max_length=200)
+    retriever = auto_retriever(data=data, embed_model=embed_model,type="re-ranking", max_length=200)
     summary = retriever.call()
     return summary
 
