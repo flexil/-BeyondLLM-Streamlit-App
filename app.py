@@ -7,7 +7,8 @@ from beyondllm.source import fit
 import os
 import re
 import nltk
-nltk.download('punkt')
+
+nltk.download('punkt', download_dir='/tmp/nltk_data')
 
 hf_token = os.environ['HF_TOKEN']
 st.title("BeyondLLM App: Semantic Search, Hybrid Search, and Summarization for AI  Blog Posts Content")
