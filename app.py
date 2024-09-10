@@ -21,8 +21,10 @@ def create_retriever(data, embed_model, search_type):
         return auto_retriever(data=data, embed_model=embed_model, type="cross-rerank", top_k=2)
     elif search_type == "Hybrid":
         return auto_retriever(data=data, embed_model=embed_model, type="hybrid", top_k=5, mode="OR")
-    elif: search_type == "Summarize"
+    elif search_type == "Summarize":
         return auto_retriever(data=data, embed_model=embed_model, type="normal", top_k=5, mode="OR")
+    else :
+        return none
 
 def generate_output(retriever, llm, prompt):
     pipeline = generator.Generate(question=prompt, retriever=retriever, llm=llm)
