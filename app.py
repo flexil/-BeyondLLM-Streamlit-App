@@ -64,7 +64,7 @@ def main():
         if retriever:
             output = generate_output(retriever, llm, prompt)
         else:
-            output = summarize(llm,retriever, url)
+            return none
         
         st.write(f"RESPONSE: {clean_output(output)}")
 
