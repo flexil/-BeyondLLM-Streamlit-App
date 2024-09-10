@@ -28,9 +28,12 @@ def generate_output(retriever, llm, prompt):
     pipeline = generator.Generate(question=prompt, retriever=retriever, llm=llm)
     output = pipeline.call()
     return output
-
+    
 def summarize(llm, url):
-    return llm.summarize(url)
+    data = fit(path=url, dtype="url")
+    retriever = auto_retriever(data=data, type="summarization", max_length=200)
+    summary = retriever.call()
+    return summary
 
 def clean_output(output):
     clean_output = re.sub(r'[^a-zA-Z0-9\s]', '', output)
