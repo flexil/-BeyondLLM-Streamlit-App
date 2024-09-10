@@ -24,7 +24,7 @@ def create_retriever(data, embed_model, search_type):
     elif search_type == "Summarize":
         return auto_retriever(data=data, embed_model=embed_model, type="normal", top_k=5, mode="OR")
     else :
-        return none
+        return None
 
 def generate_output(retriever, llm, prompt):
     pipeline = generator.Generate(question=prompt, retriever=retriever, llm=llm)
@@ -64,7 +64,7 @@ def main():
         if retriever:
             output = generate_output(retriever, llm, prompt)
         else:
-            return none
+            return None
         
         st.write(f"RESPONSE: {clean_output(output)}")
 
