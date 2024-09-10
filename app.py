@@ -47,7 +47,7 @@ def main():
         data = fit(path=url, dtype="url")
         embed_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         retriever = create_retriever(data, embed_model, search_type)
-        llm = HuggingFaceHubModel(model="huggingfaceh4/zephyr-7b-alpha", token=hf_token, model_kwargs={"max_new_tokens":256, "temperature": 0.0})
+        llm = HuggingFaceHubModel(model="huggingfaceh4/zephyr-7b-alpha", token=hf_token, model_kwargs={"max_new_tokens":256, "temperature": 0.1})
         
         prompt = f"""
         You are a knowledgeable AI assistant.
