@@ -8,8 +8,8 @@ import os
 import re
 
 hf_token = os.environ['HF_TOKEN']
-st.title("BeyondLLM App: Semantic Search, Hybrid Search, and Summarization for AI  Blog Posts Content")
-st.write("Perform semantic, hybrid search and summarization to find relevant information within a blog post")
+st.title("BeyondLLM App: Semantic Search, Hybrid Search, and Summarization for websites, Blog Posts Content")
+st.write("Perform semantic, hybrid search and summarization to find relevant information")
 def get_user_input():
     url = st.text_input("Enter the URL of the blog post")
     question = st.text_input("Enter your question")
